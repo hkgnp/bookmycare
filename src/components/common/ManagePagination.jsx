@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import Context from '../../Context';
 
 // Manages the pagination
-export const ManagePagination = (props) => {
-  // Destructure variables to calculate number of pages
-  const { pageSize, postsCount, managePageChange, currentPage } = props;
+export const ManagePagination = () => {
+  const context = useContext(Context);
 
+  // Destructure variables to calculate number of pages
+  // const { pageSize, postsCount, managePageChange, currentPage } = context;
+
+  const numberofServices = context.services().length;
   // Calculate number of pages
-  const pagesCount = Math.ceil(postsCount / pageSize);
+  const pagesCount = Math.ceil(numberofServices / context.pageSize());
   let numberofPagesArray = [];
   for (let i = 1; i < pagesCount + 1; i++) {
     numberofPagesArray.push(i);
@@ -16,8 +20,13 @@ export const ManagePagination = (props) => {
   // Sets number of pages and whether the active page is selected or not
   const renderPages = () => {
     return numberofPagesArray.map((p) => (
-      <PaginationItem key={p} className={p === currentPage ? 'active' : null}>
-        <PaginationLink onClick={() => managePageChange(p)}>{p}</PaginationLink>
+      <PaginationItem
+        key={p}
+        className={p === context.currentPage() ? 'active' : null}
+      >
+        <PaginationLink onClick={() => context.managePageChange(p)}>
+          {p}
+        </PaginationLink>
       </PaginationItem>
     ));
   };

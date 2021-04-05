@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Context from '../Context';
+import Context from '../../Context';
 import RenderServices from './RenderServices';
 
 const AllServices = () => {
@@ -10,7 +10,7 @@ const AllServices = () => {
       { id: 2, name: 'test 2' },
     ],
   });
-  const [pageSize, setPageSize] = useState(2);
+  const [pageSize, setPageSize] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
   const [loaded, setLoaded] = useState(false);
 
@@ -19,12 +19,16 @@ const AllServices = () => {
     services: () => {
       return services.services;
     },
-  };
-
-  //Pagination
-  const managePageChange = (page) => {
-    setCurrentPage(page);
-    window.scrollTo(0, 0);
+    pageSize: () => {
+      return pageSize;
+    },
+    currentPage: () => {
+      return currentPage;
+    },
+    managePageChange: (page) => {
+      setCurrentPage(page);
+      window.scrollTo(0, 0);
+    },
   };
 
   return (
