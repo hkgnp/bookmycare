@@ -29,6 +29,9 @@ const AllServices = () => {
       setCurrentPage(page);
       window.scrollTo(0, 0);
     },
+    bookService: (serviceId) => {
+      alert('Booking ' + serviceId);
+    },
   };
 
   return (

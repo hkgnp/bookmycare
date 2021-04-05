@@ -14,11 +14,16 @@ import {
 const RenderServices = () => {
   const context = useContext(Context);
 
+  // Render pages according to pagination settings
   const allServices = Paginate(
     context.services(),
     context.currentPage(),
     context.pageSize()
   );
+
+  const bookService = (e) => {
+    context.bookService(e.target.name);
+  };
 
   return (
     <React.Fragment>
@@ -34,7 +39,9 @@ const RenderServices = () => {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </CardText>
-              <Button>Button</Button>
+              <Button name={s.id} onClick={bookService}>
+                Book Service
+              </Button>
             </CardBody>
           </Card>
         ))}

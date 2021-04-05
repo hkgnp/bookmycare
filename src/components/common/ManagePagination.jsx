@@ -24,7 +24,10 @@ export const ManagePagination = () => {
         key={p}
         className={p === context.currentPage() ? 'active' : null}
       >
-        <PaginationLink onClick={() => context.managePageChange(p)}>
+        <PaginationLink
+          onClick={() => context.managePageChange(p)}
+          style={{ borderColor: '#0e103d' }}
+        >
           {p}
         </PaginationLink>
       </PaginationItem>

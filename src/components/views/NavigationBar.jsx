@@ -18,30 +18,30 @@ const NavigationBar = (props) => {
 
   return (
     <React.Fragment>
-      <Navbar light expand="lg">
-        <NavbarBrand href="/" style={{ color: '#e86632', fontWeight: 'bold' }}>
+      <Navbar dark expand="lg">
+        <NavbarBrand href="/" style={{ color: '#ffffff', fontWeight: 'bold' }}>
           <i className="fas fa-clipboard"></i>
-          book my care
+          &nbsp;book my care
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/posts">
+              <NavLink href="/allservices">
                 <i className="fas fa-list-alt" style={{ color: 'blue' }}></i>
-                All Resources
+                &nbsp;Browse Services
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/createpost">
+              <NavLink href="/usefullinks">
                 <i className="fas fa-gift" style={{ color: 'green' }}></i>
-                Contribute Resource
+                &nbsp;Useful Links
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/about">
                 <i className="fas fa-info-circle" style={{ color: 'red' }}></i>
-                About
+                &nbsp;About This App
               </NavLink>
             </NavItem>
           </Nav>
