@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Context from '../'
+import Context from '../Context';
 import RenderServices from './RenderServices';
 
 const AllServices = () => {
@@ -30,8 +30,9 @@ const AllServices = () => {
   return (
     <React.Fragment>
       <div style={{ height: '100vh' }}>
-          <context.Provid
-        <RenderServices />
+        <Context.Provider value={context}>
+          <RenderServices />
+        </Context.Provider>
       </div>
     </React.Fragment>
   );
