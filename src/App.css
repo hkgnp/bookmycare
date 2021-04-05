@@ -5,7 +5,8 @@
 }
 
 .card {
-  background-color: #f2d7ee;
+  border: solid 1rem #f2d7ee !important;
+  border-radius: 25px !important;
 }
 
 .pagination > li.active {
