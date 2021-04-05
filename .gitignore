@@ -24,3 +24,4 @@ yarn-error.log*
 
 .env
 brief.pdf
+.DS_Store
