@@ -6,8 +6,8 @@ const AllServices = () => {
   // States
   const [services] = useState({
     services: [
-      { id: 1, name: 'Test 10' },
-      { id: 2, name: 'test 20' },
+      { id: 1, name: 'Test 1' },
+      { id: 2, name: 'test 2' },
     ],
   });
   const [pageSize, setPageSize] = useState(1);
